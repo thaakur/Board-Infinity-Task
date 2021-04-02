@@ -1,0 +1,23 @@
+.card {
+    text-align: center;
+    color: white;
+    border-radius: 0%;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+}
+
+.table {
+    width: 70%;
+    margin: auto;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e1e0e1;
+    text-align: center;
+}
