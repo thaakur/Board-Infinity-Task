@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require("mongoose")
 const cron = require('node-cron')
 const moment = require('moment')
-require('dotenv/config');
+require('dotenv').config();
 
 const app = express()
 
@@ -47,7 +47,8 @@ const tasksSchema = mongoose.Schema({
 })
 
 const Task = mongoose.model("Task", tasksSchema)
-    
+    //const Task = require('./database')
+
 app.get('/', (req, res) => {
     Task.find({}, function(err, foundTasks) {
         res.render('todo', { allTasks: foundTasks })
@@ -84,4 +85,7 @@ cron.schedule('* * * * *', () => {
     Task.deleteMany({ endedAt: { $lte: ea } })
 });
 
-app.listen(3000)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
