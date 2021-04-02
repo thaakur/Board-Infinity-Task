@@ -4,8 +4,9 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "set NODE_ENV=development&& node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start-prod": "set Node_ENV=production&& node app.js"
     },
     "author": "",
     "license": "ISC",
@@ -19,5 +20,8 @@
         "mongoose": "^5.12.3",
         "node-cron": "^3.0.0",
         "nodemon": "^2.0.7"
+    },
+    "engines": {
+      "node": "14.15.4"
     }
 }
