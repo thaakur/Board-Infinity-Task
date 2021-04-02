@@ -22,9 +22,32 @@ mongoose.connect(
     }
 );
 
-//const Task = mongoose.model("Task", tasksSchema)
-const Task = require('./database')
+const tasksSchema = mongoose.Schema({
+    taskName: {
+        type: String,
+        required: true
+    },
+    taskDescription: {
+        type: String,
+        required: true
+    },
+    creator: {
+        type: String,
+        required: true
+    },
+    duration: {
+        type: Number,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    endedAt: Date
+})
 
+const Task = mongoose.model("Task", tasksSchema)
+    
 app.get('/', (req, res) => {
     Task.find({}, function(err, foundTasks) {
         res.render('todo', { allTasks: foundTasks })
