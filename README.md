@@ -43,7 +43,7 @@ There will be two endpoints:
 - /add - takes data from front-end and created expireAt date UTC date by adding Duration to current dateTime and insert into Database.
 - /list - returns all the task and we populate the data on frontend.
 
-The desired outcome is there the assigned task get expired after a given amount of time, also if you want that the task should be permanent that is on daily basis just hit 0 as the duration. 
+The desired outcome is there the assigned task get expired after a given amount of time but if time right now is 10:22:07 then it will be counted as ceil of seconds and will make the minutes as 10:23:00, also if you want that the task should be permanent that is on daily basis just hit 0 as the duration. 
 
 To make it work on your local system
 If you're not using the live project and downloading the repository and unziping it. 
